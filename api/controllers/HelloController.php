@@ -3,6 +3,8 @@ namespace api\controllers;
 use yii\web\Controller;
 use yii\web\Cookie;
 use api\models\Test;
+use api\models\Customer;
+use api\models\Order;
 class HelloController extends Controller{
 
     public $layout='common';
@@ -58,11 +60,40 @@ class HelloController extends Controller{
       /*  foreach (Test::find()->asArray()->batch(1) as $tests){
             var_dump($tests);
         }*/
-        $where=Test::find()->where(array('id'=>1))->all();
+      //  $where=Test::find()->where(array('id'=>1))->all();
+
+        //删除数据
        //$where[0]->delete();
-       Test::deleteAll('id>1');
+   //  Test::deleteAll('id>1');
        // var_dump($res);
+
+        //增加数据
+        $test=new Test();
+       $data2['name']='wff2';
+        $data3=array('name'=>'145','id'=>112);
+      // $test->name='fffs';
+      //  $test->save();
+      //  \Yii::$app->db->createCommand()->insert('wf_test',$data3)->execute();
+
         //return $this->renderPartial('index',$data);
      //   return $this->render('index',$data);
+
+        //修改
+      //  $test=Test::find()->where(array('id'=>112))->one();
+        //$test->name='147';
+       // $test->save();
+
+
+    //关联模型一对多
+      //  $customer=Customer::find()->where(array('name'=>'wf'))->one();
+        //$order=$customer->hasMany(Order::className(),array('customer_id'=>'id'))->asArray()->all();
+       // $order=$customer->orders;
+    //关联模型一对一
+
+       //$order=Order::find()->where(array('id'=>3))->one();
+
+       //$customer=$order->hasOne(Customer::className(),array('id'=>'customer_id'))->asArray()->all();
+      //  $customer=$order->customer;
+   // var_dump($customer);
     }
 }
