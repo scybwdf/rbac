@@ -1,7 +1,7 @@
 <?php
 
 namespace api\assets;
-
+use api\services\Urlservice;
 use yii\web\AssetBundle;
 
 /**
@@ -22,17 +22,17 @@ class AppAsset extends AssetBundle
        $ver=20180105;
 
         $this->css=[
-            "bootstrap/css/bootstrap.min.css?v={$ver}"
+           Urlservice::BuidUrl( "/layui/css/layui.css",['v'=>$ver])
         ];
 
         $this->js=[
-            "js/jquery-1.12.2.js?v={$ver}",
-            "bootstrap/js/bootstrap.min.js?v={$ver}"
+            Urlservice::BuidUrl( "/js/jquery-1.12.2.js",['v'=>$ver]),
+            Urlservice::BuidUrl( "/layui/layui.js",['v'=>$ver])
         ];
         parent::registerAssetFiles($view);
    }
-    public $depends = [
+   /* public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-    ];
+    ];*/
 }

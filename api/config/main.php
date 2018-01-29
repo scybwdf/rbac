@@ -37,14 +37,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
+
+       'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+           'rules' => [
+               '/' => 'default/index' //默认访问页面route规则
+           ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

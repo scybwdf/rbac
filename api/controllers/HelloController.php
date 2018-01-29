@@ -95,5 +95,6 @@ class HelloController extends Controller{
        //$customer=$order->hasOne(Customer::className(),array('id'=>'customer_id'))->asArray()->all();
       //  $customer=$order->customer;
    // var_dump($customer);
+        echo 'ok';
     }
 }
